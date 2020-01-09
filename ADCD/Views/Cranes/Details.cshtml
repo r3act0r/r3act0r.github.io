@@ -1,0 +1,105 @@
+﻿@model ADCD.Views.ViewModels.OrderViewModel
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h1>Order Details</h1>
+
+<div class="container">
+    @using (Html.BeginForm("Create", "Cranes", FormMethod.Post))
+    {
+        <div class="form-row">
+            <div class="col">
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "First Name" })
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="col">
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "Last Name" })
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-row">
+            <div class="col">
+                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @placeholder = "Phone Number" })
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="col">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email Address" })
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-row">
+            <div class="col">
+                @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control", @placeholder = "Company" })
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="col">
+                @Html.TextBoxFor(m => m.CompanyAddress.Street, new { @class = "form-control", @placeholder = "Company Address" })
+                <span asp-validation-for="CompanyAddress.Street" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-row">
+            <div class="col">
+                @Html.TextBoxFor(m => m.CompanyAddress.City, new { @class = "form-control", @placeholder = "City" })
+                <span asp-validation-for="CompanyAddress.City" class="text-danger"></span>
+            </div>
+            <div class="col">
+                @Html.TextBoxFor(m => m.CompanyAddress.State, new { @class = "form-control", @placeholder = "State" })
+                <span asp-validation-for="CompanyAddress.State" class="text-danger"></span>
+            </div>
+            <div class="col">
+                @Html.TextBoxFor(m => m.CompanyAddress.ZipCode, new { @class = "form-control", @placeholder = "Zip Code" })
+                <span asp-validation-for="CompanyAddress.ZipCode" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-row">
+            <div class="col">
+                @Html.TextBoxFor(m => m.JobsiteName, new { @class = "form-control", @placeholder = "Jobsite" })
+                <span asp-validation-for="JobsiteName" class="text-danger"></span>
+            </div>
+            <div class="col">
+                @Html.TextBoxFor(m => m.JobsiteAddress.Street, new { @class = "form-control", @placeholder = "Jobsite Address" })
+                <span asp-validation-for="JobsiteAddress.Street" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-row">
+            <div class="col">
+                @Html.TextBoxFor(m => m.JobsiteAddress.City, new { @class = "form-control", @placeholder = "City" })
+                <span asp-validation-for="JobsiteAddress.City" class="text-danger"></span>
+            </div>
+            <div class="col">
+                @Html.TextBoxFor(m => m.JobsiteAddress.State, new { @class = "form-control", @placeholder = "State" })
+                <span asp-validation-for="JobsiteAddress.State" class="text-danger"></span>
+            </div>
+            <div class="col">
+                @Html.TextBoxFor(m => m.JobsiteAddress.ZipCode, new { @class = "form-control", @placeholder = "Zip Code" })
+                <span asp-validation-for="JobsiteAddress.ZipCode" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-row">
+            <div class="col">
+                @Html.LabelFor(m => m.StartDate, "Start Date")
+                @Html.TextBoxFor(m => m.StartDate, new { @class = "form-control datepicker"})
+            </div>
+            <div class="col">
+                @Html.LabelFor(m => m.StartDate, "End Date")
+                @Html.TextBoxFor(m => m.EndDate, new { @class = "form-control datepicker" })
+            </div>
+        </div>
+        <br />
+        @Html.HiddenFor(m => m.CraneId)
+        <div class="row">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    }
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
